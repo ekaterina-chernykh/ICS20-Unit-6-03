@@ -15,6 +15,7 @@ const weather = async (URLAddress) => {
     const jsonData = await request.json()
     let temp1 = jsonData.main.temp
     let temp2 = 0
+    const feeling = jsonData.weather[0]
     const image = feeling.icon
     temp2 = temp1 - 273.6
 
