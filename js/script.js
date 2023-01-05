@@ -21,7 +21,7 @@ const weather = async (URLAddress) => {
 
     console.log(jsonData.weather)
     document.getElementById("image").innerHTML =
-      "<img src='https://openweathermap.org/img/wn/" + image
+      "<img src='https://openweathermap.org/img/wn/" + image + "@2x.png"
 
     document.getElementById("temp").innerHTML =
       "The tempurature outside is " + temp2.toFixed(2) + "° C!"
