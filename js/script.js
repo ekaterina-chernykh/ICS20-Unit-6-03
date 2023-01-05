@@ -14,16 +14,11 @@ const weather = async (URLAddress) => {
     const request = await fetch(URLAddress)
     const jsonData = await request.json()
     let temp1 = jsonData.main.temp
-    let temp2 = 0
-    const feeling = jsonData.weather[0]
-    const image = feeling.icon
-    temp2 = temp1 - 273.6
+    let temp2 = temp1 - 273.6
 
     console.log(jsonData.weather)
     document.getElementById("image").innerHTML =
-      "<img src='https://openweathermap.org/img/wn/" +
-      image +
-      "@2x.png alt='image' width= 20% height 20%'"
+      "<img src='https://openweathermap.org/img/wn/" + jsonData.weather[0] + "@2x.png alt='image' width= 20% height 20%'"
 
     document.getElementById("temp").innerHTML =
       "The tempurature outside is " + temp2.toFixed(2) + "° C"
