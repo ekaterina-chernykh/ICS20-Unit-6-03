@@ -9,21 +9,25 @@
 /**
  * Check servie worker.
  */
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS20-Unit-6-03/sw.js", {
-    scope: "/ICS20-Unit-6-03/",
-  })
+const weather = async (URLAddress) => {
+  try {
+    const request = await fetch(URLAddress)
+    const jsonData = await request.json()
+    let temp1 = jsonData.main.temp
+    let temp2 = 0
+    const feeling = jsonData.weather[0]
+    const image = feeling.icon
+    temp2 = temp1 - 273.6
+
+    console.log(jsonData.weather)
+    document.getElementById("image").innerHTML =
+      "<img src='https://openweathermap.org/img/wn/"
+
+    document.getElementById("temp").innerHTML =
+      "The tempurature outside is " + temp2.toFixed(2) + "° C!"
+  } catch (err) {
+    console.log(err)
+  }
 }
 
-/**
- * This function displays an alert.
- */
-function myButtonClicked() {
-  // input
-  const height = parseFloat(document.getElementById("height").value)
-
-  // process
-  const volume = 2
-  // output
-  document.getElementById("volume").innerHTML = "Volume is: " + volume + "mm³"
-}
+weather("https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5")
