@@ -20,7 +20,7 @@ const weather = async (URLAddress) => {
     document.getElementById("image").innerHTML =
       "<img src=' https://openweathermap.org/img/wn/10d@2x.png" +
       jsonData.weather[0] +
-      "@2x.png alt='image' width= 20% height 20%'" +
+      "@2x.png alt='image'" +
       ">"
 
     document.getElementById("temp").innerHTML =
