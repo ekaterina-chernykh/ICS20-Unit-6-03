@@ -7,8 +7,14 @@
 "use strict"
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICS20-Unit-6-02/sw.js", {
+    scope: "/ICS20-Unit-6-02/",
+  })
+}
+
 const weather = async (URLAddress) => {
   try {
     const request = await fetch(URLAddress)
