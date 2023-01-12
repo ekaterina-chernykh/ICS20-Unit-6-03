@@ -25,8 +25,9 @@ const weather = async (URLAddress) => {
     let linkToIcon = "https://openweathermap.org/img/wn/" + iconId + "@2x.png"
 
     console.log(jsonData.weather)
-    //document.getElementById("image").innerHTML = "<img src=" + linkToIcon +  ">"    
-    document.getElementById("image").innerHTML = '<img src=" + linkToIcon +  " alt="Weather image" >'
+    //document.getElementById("image").innerHTML = "<img src=" + linkToIcon +  ">"
+    document.getElementById("image").innerHTML =
+      '<img src=" + linkToIcon +  " alt="Weather image" >'
 
     document.getElementById("temp").innerHTML =
       "The tempurature outside is " + temp2.toFixed(2) + "° C"
