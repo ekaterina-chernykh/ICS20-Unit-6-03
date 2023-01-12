@@ -26,7 +26,7 @@ const weather = async (URLAddress) => {
     //let finalLink = <img src=" + linkToIcon +  " alt="Weather image" ></img>
 
     console.log(jsonData.weather)
-    document.getElementById("image").innerHTML = "<img src=" + linkToIcon +  ">"    
+    document.getElementById("image").innerHTML = "<img src=" + linkToIcon + ">"
     //document.getElementById("image").innerHTML = '<img src=" + linkToIcon +  " alt="Weather image" >'
     //document.getElementById("image").innerHTML = finalLink
 
